@@ -21,9 +21,14 @@ Axure的前端组件库,在RP9.x版本通过测试
 
   
   ```js
-  // 加载外部代码（以 "//import" 开头，注意import前没有空格，import后有一个英文空格）：
-  // 注意：这种方式引入的代码无法访问 "THIS"
-  //import your_css_or_js_url
+  // 加载外部代码（以 "// import" 开头，注意import前没有空格，import后有一个英文空格）：
+  // 注意：这种方式引入的代码无法访问 "THIS"，示例如下
+  // import your_css_or_js_url
+
+  // 将代码以ES Module形式载入（以 "// type module" 标记，注意type前后均有一个空格）,示例如下
+  // type module
+  import { createApp } from 'https://unpkg.com/petite-vue?module';
+  console.log(createApp);
   ```
 
   ```js
@@ -127,7 +132,7 @@ Axure的前端组件库,在RP9.x版本通过测试
   THIS.emit('moved', $axure('@元件名'));
 
   // 外置脚本，等同于 eval('https://127.0.0.1/script.js')，可方便用外部 IDE（如 VSCode）编写代码
-  // 注意：外置脚本也可以访问变量"THIS"，但"//import"语法糖还是要写在jsbox里，不能够放在外部脚本里
+  // 注意：外置脚本也可以访问变量"THIS"，但"// import"语法糖还是要写在jsbox里，不能够放在外部脚本里
   THIS.runScript('url');
 
   // 清空中继器内所有文本域标签内的内容
@@ -394,7 +399,10 @@ Axure的前端组件库,在RP9.x版本通过测试
       });
       ```
 
-    - ##### 隐藏 Axure 默认打印的 dispatchMessage
+    - ##### 动态插入ES Module代码
       ```js
-      //axlib.hideMsg(); 有bug，已弃用
+      axlib.insertJsModule(`
+        import { createApp } from 'https://unpkg.com/petite-vue?module';
+        console.log(createApp);
+      `);
       ```
