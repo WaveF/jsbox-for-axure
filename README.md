@@ -153,9 +153,10 @@ Axure的前端组件库,在RP9.x版本通过测试
     - 在Axure中添加 *“加载时-打开外部链接”* 的交互，然后输入以下代码：
 
       ```js
-      $axure.utils.loadJS('https://ax.minicg.com/axlib-v3.min.js', ()=>{
+      loadJS('https://ax.minicg.com/axlib-v3.min.js', ()=>{
         console.log(axlib);
       });
+      function loadJS(url,cb){let s=document.createElement('script');s.onload=cb;s.src=url;document.head.appendChild(s)}
       ```
 
     - 也可以通过添加网络字体的方式加载，代码如下：
