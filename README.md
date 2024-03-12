@@ -211,10 +211,10 @@ Axure的前端组件库,在RP9.x版本通过测试
       // 清空中继器数据
       $axure('@中继器名称').clearRepeaterData();
 
-      // 侦听中继器更新（也支持add、delete等）
-      $axure('@中继器名称').on('REPEATER_DATA_UPDATED', (e, res) => {
-        console.log(res);
-      });
+      // 侦听中继器数据变化（注意这里是以Jquery元素触发的，而不是$axure）
+      $(`#${中继器ID}`).on('REPEATER_DATA_ADDED',   (e, res) => { console.log(res); });  /* 插入行 */
+      $(`#${中继器ID}`).on('REPEATER_DATA_DELETED', (e, res) => { console.log(res); });  /* 删除行 */
+      $(`#${中继器ID}`).on('REPEATER_DATA_UPDATED', (e, res) => { console.log(res); });  /* 修改行 */
       ```
 
     - ##### 动态面板 - Dynamic Panel
