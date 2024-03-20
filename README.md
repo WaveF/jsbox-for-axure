@@ -91,6 +91,9 @@ Axure的前端组件库,在RP9.x版本通过测试
     .your-class-2 { background: #FC0; }
   `);
 
+  // 插入JS代码（第二个参数默认为text/javascript）
+  THIS.appendJS('console.log("jsbox")', 'module');
+
   // 传入ax、jq或原生节点对象，转为原生节点
   THIS.getNode(el);
 
