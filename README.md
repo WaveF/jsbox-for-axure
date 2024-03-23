@@ -44,6 +44,7 @@ Axure的前端组件库,在RP9.x版本通过测试
    * THIS.getView() / THIS.getRepeater() / THIS.getTextarea() / THIS.getAllTextareas()
    */
   console.log(THIS.view);
+  console.log(JSBOX.getView())
 
   // 获取本体预加载的文件列表
   console.log(THIS.files);
