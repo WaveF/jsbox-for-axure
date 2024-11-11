@@ -6,8 +6,11 @@ Axure的前端组件库,在RP9.x版本通过测试
 - ## JSBOX - v2
   可直接在 Axure 里写JS代码的中继器组件，可方便设定需要先加载的 js 和 css 地址，**自动预加载 axlib**，编辑器内的代码会等待预加载的文件成功载入后再执行，且变量作用域与外部隔离，内置```THIS```变量可获取自身的各种属性。
 
-  #### 效果预览 & 组件下载
-  https://axhub.im/ax9/203a5819ebe3e37b
+  #### 效果预览
+  [https://axhub.im/ax9/203a5819ebe3e37b](https://axhub.im/ax9/203a5819ebe3e37b)
+  
+  #### 获取组件
+  [https://www.axured.cn/a/1143.html](https://www.axured.cn/a/1143.html)
 
   #### 使用方法
 
