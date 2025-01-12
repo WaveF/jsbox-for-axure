@@ -46,8 +46,11 @@ Axure的前端组件库,在RP9.x版本通过测试
    * 但是此改动也会导致获取的元素存在时效性，如果要获取中继器内最新的节点，可以通过以下新增的方法：
    * THIS.getView() / THIS.getRepeater() / THIS.getTextarea() / THIS.getAllTextareas()
    */
+
+  // 从 2.4.17 开始，这几个内置变量等价：THIS === JSBOX === jsbox
   console.log(THIS.view);
   console.log(JSBOX.getView())
+  console.log(jsbox.showUI())
 
   // 获取本体预加载的文件列表
   console.log(THIS.files);
@@ -94,6 +97,10 @@ Axure的前端组件库,在RP9.x版本通过测试
     .your-class-1 { background: #0CF; }
     .your-class-2 { background: #FC0; }
   `);
+  // 或
+  THIS.appendCSS(`
+    .tailwindcss { @apply mt-2 bg-blue-500 text-white; }
+  `, 'postcss');
 
   // 插入JS代码（第二个参数默认为text/javascript）
   THIS.appendJS('console.log("jsbox")', 'module');

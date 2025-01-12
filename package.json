@@ -1,6 +1,6 @@
 {
   "name": "jsbox",
-  "version": "2.4.16",
+  "version": "2.4.17",
   "description": "",
   "main": "lib/main.js",
   "scripts": {
